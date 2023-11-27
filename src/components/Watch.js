@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { closeMenu } from '../utils/appSlice';
 import { useSearchParams } from 'react-router-dom';
-import { YOUR_API_KEY } from '../utils/constant';
+// import { YOUR_API_KEY } from '../utils/constant';
 import { AiOutlineLike } from "react-icons/ai"
 import { AiOutlineDislike } from "react-icons/ai"
 import { PiShareFatLight } from "react-icons/pi"
@@ -13,6 +13,7 @@ import { BsSend } from "react-icons/bs";
 import Avatar from 'react-avatar';
 import LiveChat from './LiveChat';
 import { addMessage } from '../utils/chatSlice';
+import { YOUR_API_KEY } from '../config/env';
 
 const Watch = () => {
     const [searchParams] = useSearchParams();

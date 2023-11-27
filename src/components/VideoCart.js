@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEffect } from 'react';
 import Avatar from 'react-avatar';
-import { YOUR_API_KEY } from '../utils/constant';
+import { YOUR_API_KEY } from '../config/env';
 import { useState } from 'react';
 
 const VideoCart = ({ item, addWalaHai }) => {

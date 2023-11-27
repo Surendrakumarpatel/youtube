@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react'
-import { BASE_URL, YOUR_API_KEY } from '../utils/constant'
+import { BASE_URL} from '../utils/constant'
 import VideoCart, { AddVideoCart } from './VideoCart';
 import { Link } from 'react-router-dom';
 import Shimmer from './Shimmer';
 import { useDispatch, useSelector } from 'react-redux';
 import { loading, setHomeVideo } from '../utils/appSlice';
+import { YOUR_API_KEY } from '../config/env';
 
 const VideoContainer = () => {
 
