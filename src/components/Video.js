@@ -6,7 +6,7 @@ const Video = ({item}) => {
 
 
     return (
-        <div className='flex m-4'>
+        <div className='flex m-4 dark:text-white'>
             <div>
                 <img className='rounded-lg' src = {medium.url} />
             </div>

@@ -8,7 +8,6 @@ import { RiVideoUploadLine } from "react-icons/ri"
 import { IoIosNotificationsOutline } from "react-icons/io"
 import { YOUR_API_KEY, YOUTUBE_SEARCH_API } from '../utils/constant';
 import { searchResults } from '../utils/cacheSlice';
-import { Navigate } from 'react-router-dom';
 
 
 const Header = () => {
@@ -52,15 +51,17 @@ const Header = () => {
     const res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${searchQuery}&key=${YOUR_API_KEY}`)
     const jsonData = await res.json();
     dispatch(searchVideo(jsonData));
-  
   }
 
 
   return (
-    <div className='flex justify-center items-center w-[100%]'>
+    <div className='flex justify-center items-center w-[100%] fixed bg-white dark:bg-[#121212] dark:text-white transition-all duration-500'>
       <div className='flex w-[96%] justify-between items-center'>
         <div className='flex items-center'>
-          <GiHamburgerMenu className='cursor-pointer text-lg' onClick={toggleMenuHandler} />
+
+          <div className='hover:bg-gray-200 dark:hover:bg-[#2d2d2d] p-3 rounded-full cursor-pointer'  onClick={toggleMenuHandler} >
+            <GiHamburgerMenu className='text-lg'/>
+          </div>
           <img className='w-28 ml-5' src="https://www.freeiconspng.com/uploads/youtube-logo-png-transparent-image-5.png" alt="youtube" />
         </div>
         <div className='flex flex-col w-[35%]'>
@@ -68,23 +69,23 @@ const Header = () => {
             <input
               value={searchQuery}
               onChange={changeEvenetHandler}
-              className='w-[100%] border border-gray-500 rounded-l-full p-2 outline-none'
+              className='w-[100%] border border-gray-300 dark:border-gray-500 dark:bg-[#2d2d2d] rounded-l-full px-5 outline-none'
               placeholder='Search'
               onFocus={() => setShowSuggestion(true)}
               onBlur={() => setShowSuggestion(false)}
             />
-            <button onClick={getSearchedQuery} className='border border-gray-500 bg-gray-100 p-2 rounded-r-full'><AiOutlineSearch className='text-2xl cursor-pointer' /></button>
+            <button onClick={getSearchedQuery} className='border border-gray-300 dark:border-gray-500 bg-gray-100 dark:bg-[#2d2d2d] hover:bg-gray-200 px-5 py-2 rounded-r-full'><AiOutlineSearch className='text-2xl cursor-pointer' /></button>
           </div>
           {
             (showSuggestion && serachData.length !== 0) && (
-              <div className='absolute w-[31%] py-5 bg-white rounded-md shadow-lg shadow-gray-500/40  mt-12'>
+              <div className='absolute w-[31%] py-5 bg-white dark:bg-[#2d2d2d] dark:shadow-none dark:text-white rounded-md shadow-lg shadow-gray-500/40  mt-12'>
                 <ul>
                   {
                     serachData.map((item, idx) => {
                       return (
-                        <div key={idx} className='flex items-center px-4 hover:bg-gray-100'>
+                        <div key={idx} className='flex items-center px-4 hover:bg-gray-100 dark:hover:bg-[#434343]'>
                           <AiOutlineSearch />
-                          <li className='px-2 py-1 cursor-pointer text-md font-bold'>{item}</li>
+                          <li className='px-2 py-1 cursor-pointer text-md font-medium'>{item}</li>
                         </div>
                       )
                     })

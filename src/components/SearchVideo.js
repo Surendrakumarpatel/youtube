@@ -5,9 +5,11 @@ import Video from './Video';
 const SearchVideo = () => {
     const [video, setVideo] = useState([]);
     const searchVideoItems = useSelector(store => store.app.searchVideoItems);
+    
     useEffect(() => {
         setVideo(searchVideoItems);
     }, [searchVideoItems]);
+     
  
     return (
         <div className='m-6'>
@@ -15,8 +17,7 @@ const SearchVideo = () => {
                 video.map((item) => {
                     return (
                        <div key = {item.snippet.channelId}>
-
-                           <Video item = {item}/>
+                            <Video item = {item}/>
                        </div>
                     )
                 })

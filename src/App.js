@@ -30,10 +30,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/demo",
         element: (
-        <>
-          <Demo/>
-          <Demo2/>
-        </>
+          <>
+            <Demo />
+            <Demo2 />
+          </>
         ),
       },
     ]
@@ -43,15 +43,11 @@ const appRouter = createBrowserRouter([
 function App() {
   return (
     <Provider store={store}>
-      <div className="">
-        <Header />
+      <div className='dark:bg-[#121212] transition-all duration-500'>
+        <Header/>
         <RouterProvider router={appRouter} />
-
       </div>
     </Provider>
-
-
-
   );
 }
 
