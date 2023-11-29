@@ -3,12 +3,13 @@ import { useEffect } from 'react';
 import Avatar from 'react-avatar';
 import { YOUR_API_KEY } from '../config/env';
 import { useState } from 'react';
-
+ 
 const VideoCart = ({ item, addWalaHai }) => {
-  
-  const { snippet} = item;
-  const { channelTitle, thumbnails, title, channelId } = snippet;
+
   const [ytIcon, setYtIcon] = useState(null);
+  const { snippet } = item;
+  const { channelTitle, thumbnails, title, channelId } = snippet;
+
   useEffect(() => {
     const ytIcon = async () => {
       const res = await fetch(`https://youtube.googleapis.com/youtube/v3/channels?part=snippet&id=${channelId}&key=${YOUR_API_KEY}`);
@@ -18,6 +19,7 @@ const VideoCart = ({ item, addWalaHai }) => {
     }
     ytIcon();
   }, [])
+
   return (
     <div className='m-1 mt-5 w-94 p-1 cursor-pointer'>
       <img className='rounded-xl w-full' src={thumbnails.medium.url} alt="thumbnails" />
@@ -34,9 +36,9 @@ const VideoCart = ({ item, addWalaHai }) => {
             </>
             ) : (
               <>
-              <li className='text-gray-500 dark:text-white'><span className='font-bold text-xs text-black dark:text-white'>Sponsered</span> . {channelTitle}</li>
-               
-            </>
+                <li className='text-gray-500 dark:text-white'><span className='font-bold text-xs text-black dark:text-white'>Sponsered</span> . {channelTitle}</li>
+
+              </>
             )
           }
 

@@ -5,8 +5,7 @@ import { Provider } from 'react-redux';
 import store from './utils/store';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Feed from './components/Feed';
-import Watch from './components/Watch';
-import SearchVideo from './components/SearchVideo';
+import Watch from './components/Watch'; 
 import Demo from './components/Demo';
 import Demo2 from './components/Demo2';
 
@@ -23,10 +22,10 @@ const appRouter = createBrowserRouter([
         path: "/watch",
         element: <Watch />
       },
-      {
-        path: "/search",
-        element: <SearchVideo />
-      },
+      // {
+      //   path: "/search",
+      //   element: <SearchVideo />
+      // },
       {
         path: "/demo",
         element: (

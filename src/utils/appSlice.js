@@ -10,6 +10,7 @@ const appSlice = createSlice({
         category:"All",
         isLoading:false, 
         toggle:false,
+        ytIcon:""
     },
     reducers:{
         toggleMenu:(state) => {
@@ -32,9 +33,12 @@ const appSlice = createSlice({
         },
         setToggle:(state)=>{
             state.toggle = !state.toggle
+        },
+        setYtIcon:(state, action)=>{
+            state.ytIcon = action.payload;
         }
     }
 });
 
-export const {toggleMenu, closeMenu, searchVideo, setHomeVideo , changeCategory,loading, setToggle} = appSlice.actions;
+export const {toggleMenu, closeMenu, searchVideo, setHomeVideo , changeCategory,loading, setToggle, setYtIcon} = appSlice.actions;
 export default appSlice.reducer;

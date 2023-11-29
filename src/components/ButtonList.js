@@ -18,12 +18,6 @@ const buttonContent = ['All',
   'Comedy',
   'Thriller',
   'News',
-  'Recent uploaded',
-  'New to you',
-  'Watched',
-  'Comedy',
-  'Thriller',
-  'News'
 ]
 
 const ButtonList = () => {

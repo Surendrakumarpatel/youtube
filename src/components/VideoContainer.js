@@ -49,13 +49,10 @@ const VideoContainer = () => {
 
   return isLoading ? (<Shimmer />) : video && video.length === 0 ? <div className='relative top-20 text-center'><p>Some internal issue visite after few minutes!</p></div> :
     (
-      <div className={`grid ${isMenuOpen ? 'grid-cols-3' : 'grid-cols-4'} gap-0`}>
+      <div className={`grid ${isMenuOpen ? 'grid-cols-3' : 'md:grid-cols-4 grid-cols-1'} gap-0`}>
         {video[0] && <AddVideoCart item={video[video.length - 1]} />}
         {
-          video.map((item) => {
-            console.log("*******");
-            console.log(item);
-            console.log("*******");
+          video.map((item) => { 
             return (
               <Link key={typeof item.id === 'object' ? item.id.videoId : item.id} to={`/watch?v=${typeof item.id === 'object' ? item.id.videoId : item.id}`}>
                 <VideoCart item={item} />

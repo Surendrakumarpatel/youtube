@@ -47,7 +47,7 @@ const commentsData = [
 
 
 
-const CommentsContainer = () => {
+const CommentsContainer = ({commentCount}) => {
     const [showSort, setShowSort] = useState(false);
 
     const display = () => {
@@ -57,7 +57,7 @@ const CommentsContainer = () => {
     return (
         <div>
             <div className='flex w-[24%] items-center justify-between mt-5 mb-5'>
-                <h1 className='text-2xl font-bold'>5 Comments</h1>
+                <h1 className='font-bold text-lg'>{commentCount} Comments</h1>
                 <div className='flex items-center cursor-pointer'>
                     <MdOutlineSort />
                     <h1 onClick={display} className='font-bold'>Sorts</h1>

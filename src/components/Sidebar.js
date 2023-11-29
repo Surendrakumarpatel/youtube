@@ -25,7 +25,7 @@ const home = [
   },
   {
     name: "Short",
-    icon:<TbVideoMinus size="24px"/> ,
+    icon: <TbVideoMinus size="24px" />,
   },
   {
     name: "Subscription",
