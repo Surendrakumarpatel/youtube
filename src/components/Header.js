@@ -91,7 +91,7 @@ const Header = () => {
           </div>
           {
             (showSuggestion && serachData.length !== 0) && (
-              <div className='absolute z-50 w-[31%] py-5 bg-white dark:bg-[#2d2d2d] dark:shadow-none dark:text-white rounded-md shadow-lg shadow-gray-500/40  mt-12'>
+              <div className='absolute z-50 md:w-[31%] w-[80%] py-5 bg-white dark:bg-[#2d2d2d] dark:shadow-none dark:text-white rounded-md shadow-lg shadow-gray-500/40  mt-12'>
                 <ul>
                   {
                     serachData.map((item, idx) => {

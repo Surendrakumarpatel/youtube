@@ -108,7 +108,7 @@ const Sidebar = () => {
   }
 
   return !isMenuOpen ? null : (
-    <div className='p-5 w-[20%] h-[calc(100vh-4.625rem)] overflow-y-scroll bg-white dark:bg-[#121212] transition-all duration-500'>
+    <div className='absolute left-0 md:relative w-auto p-5  md:w-[20%] h-[calc(100vh-4.625rem)] overflow-y-scroll overflow-x-hidden bg-white dark:bg-[#121212] transition-all duration-500'>
       <div className='ml-4 mb-5'>
         {
           toggle ? <FaToggleOn onClick={toggleHandler} size={"40px"} className='cursor-pointer  dark:text-white' /> : <FaToggleOff onClick={toggleHandler} size={"40px"} className='cursor-pointer dark:bg-white' />

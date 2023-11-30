@@ -47,9 +47,9 @@ const VideoContainer = () => {
   }, [category])
 
 
-  return isLoading ? (<Shimmer />) : video && video.length === 0 ? <div className='relative top-20 text-center'><p>Some internal issue visite after few minutes!</p></div> :
+  return isLoading ? (<Shimmer />) : video && video.length === 0 ? <div className='relative top-20 text-center -z-50'><p>Some internal issue visite after few minutes!</p></div> :
     (
-      <div className={`grid ${isMenuOpen ? 'grid-cols-3' : 'md:grid-cols-4 grid-cols-1'} gap-0`}>
+      <div className={`grid ${isMenuOpen ? 'md:grid-cols-3 grid-cols-1' : 'md:grid-cols-4 grid-cols-1'} gap-0`}>
         {video[0] && <AddVideoCart item={video[video.length - 1]} />}
         {
           video.map((item) => { 

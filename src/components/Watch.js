@@ -56,20 +56,21 @@ const Watch = () => {
         return <h1>loading...</h1>
 
     return (
-        <div className='flex items-center justify-center w-[100%]' >
+        <div className='flex md:items-center md:justify-center w-[100%]' >
             <div className='flex w-[88%]'>
                 <div>
                     <iframe
-                        width="900"
-                        height="500"
+                        width={"900"}
+                        height={"500"}
                         src={`https://www.youtube.com/embed/${id}?&autoplay=1`}
                         title="YouTube video player"
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowFullScreen>
                     </iframe>
+
                     <h1 className='font-bold mt-2 text-lg'>{singleVideo?.snippet?.title}</h1>
-                    <div className='flex justify-between items-center mt-4'>
+                    <div className='flex flex-col md:flex-row md:justify-between md:items-center mt-4'>
                         <div className='flex items-center justify-between w-[30%]'>
                             <div className='flex'>
                                 <Avatar src={ytIcon} size="30" round={true} className='cursor-pointer' />
@@ -107,7 +108,7 @@ const Watch = () => {
                 {
                     !isMenuOpen && (
 
-                        <div className='border border-gray-300 dark:border-gray-500 w-[100%] ml-8 rounded-lg h-fit'>
+                        <div className='md:block hidden border border-gray-300 dark:border-gray-500 w-[100%] ml-8 rounded-lg h-fit'>
                             <div className='flex items-center justify-between border-b p-2'>
                                 <h1>Top chat</h1>
                                 <PiDotsThreeVerticalBold className='cursor-pointer' />
