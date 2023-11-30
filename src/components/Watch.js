@@ -12,8 +12,8 @@ import { BsSend } from "react-icons/bs";
 import Avatar from 'react-avatar';
 import LiveChat from './LiveChat';
 import { addMessage } from '../utils/chatSlice';
-import { YOUR_API_KEY } from '../config/env';
-
+import { YOUR_API_KEY } from '../utils/constant';
+ 
 const Watch = () => {
     console.log("watchpage render");
     const [input, setInput] = useState("");

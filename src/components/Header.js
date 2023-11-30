@@ -6,9 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import Avatar from 'react-avatar';
 import { RiVideoUploadLine } from "react-icons/ri"
 import { IoIosNotificationsOutline } from "react-icons/io"
-import { YOUTUBE_SEARCH_API } from '../utils/constant';
-import { searchResults } from '../utils/cacheSlice';
-import { YOUR_API_KEY } from '../config/env';
+import { YOUR_API_KEY, YOUTUBE_SEARCH_API } from '../utils/constant';
+import { searchResults } from '../utils/cacheSlice'; 
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 
